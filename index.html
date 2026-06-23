@@ -7,7 +7,6 @@
 
     <title>Harry Lesh | Portfolio</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
@@ -28,19 +27,19 @@
             color: white;
         }
 
-        /* Navigation */
+        /* NAVIGATION */
 
         nav {
             position: fixed;
-            width: 100%;
             top: 0;
-            z-index: 1000;
-            background: rgba(15, 23, 42, .9);
-            backdrop-filter: blur(10px);
+            width: 100%;
             padding: 20px 8%;
+            background: rgba(15, 23, 42, .95);
+            backdrop-filter: blur(10px);
             display: flex;
             justify-content: space-between;
             align-items: center;
+            z-index: 1000;
         }
 
         .logo {
@@ -50,8 +49,8 @@
 
         nav ul {
             display: flex;
-            list-style: none;
             gap: 30px;
+            list-style: none;
         }
 
         nav a {
@@ -64,7 +63,7 @@
             color: #60a5fa;
         }
 
-        /* Hero */
+        /* HERO */
 
         .hero {
             min-height: 100vh;
@@ -85,36 +84,51 @@
         .profile-pic {
             width: 180px;
             height: 180px;
-            border-radius: 50%;
             object-fit: cover;
+            border-radius: 50%;
             border: 4px solid #60a5fa;
+            box-shadow: 0 0 30px rgba(96, 165, 250, .5);
             margin-bottom: 25px;
-            box-shadow: 0 0 30px rgba(96, 165, 250, .4);
         }
 
         .hero h1 {
             font-size: 4rem;
-            margin-bottom: 10px;
         }
 
         .hero span {
             color: #60a5fa;
         }
 
-        .hero p {
-            color: #cbd5e1;
-            font-size: 1.2rem;
-            margin: 20px 0;
+        .typing-container {
+            margin-top: 20px;
+            min-height: 40px;
+            font-size: 1.3rem;
+        }
+
+        #typing {
+            color: #60a5fa;
+            font-weight: 600;
+        }
+
+        #typing::after {
+            content: "|";
+            animation: blink .8s infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
         }
 
         .btn {
             display: inline-block;
-            margin-top: 20px;
+            margin-top: 30px;
+            padding: 14px 30px;
             background: #2563eb;
             color: white;
-            padding: 14px 32px;
-            border-radius: 10px;
             text-decoration: none;
+            border-radius: 10px;
             transition: .3s;
         }
 
@@ -122,7 +136,7 @@
             transform: translateY(-3px);
         }
 
-        /* Sections */
+        /* SECTIONS */
 
         section {
             padding: 100px 10%;
@@ -130,11 +144,9 @@
 
         .title {
             text-align: center;
-            font-size: 2.5rem;
             margin-bottom: 50px;
+            font-size: 2.5rem;
         }
-
-        /* About */
 
         .about {
             max-width: 900px;
@@ -144,7 +156,7 @@
             font-size: 1.1rem;
         }
 
-        /* Skills */
+        /* SKILLS */
 
         .skills {
             display: grid;
@@ -164,7 +176,7 @@
             transform: translateY(-5px);
         }
 
-        /* Projects */
+        /* PROJECTS */
 
         .projects {
             display: grid;
@@ -174,13 +186,13 @@
 
         .project {
             background: #1e293b;
-            border-radius: 15px;
             padding: 25px;
+            border-radius: 15px;
             transition: .3s;
         }
 
         .project:hover {
-            transform: translateY(-6px);
+            transform: translateY(-5px);
         }
 
         .project h3 {
@@ -191,7 +203,7 @@
             color: #cbd5e1;
         }
 
-        /* Contact */
+        /* CONTACT */
 
         .contact {
             text-align: center;
@@ -206,16 +218,16 @@
             text-decoration: none;
         }
 
-        /* Footer */
+        /* FOOTER */
 
         footer {
             text-align: center;
             padding: 30px;
+            border-top: 1px solid rgba(255, 255, 255, .1);
             color: #94a3b8;
-            border-top: 1px solid rgba(255, 255, 255, .08);
         }
 
-        /* Mobile */
+        /* MOBILE */
 
         @media(max-width:768px) {
 
@@ -253,13 +265,12 @@
 
         <div class="hero-content">
 
-            <img src="profile.jpg" alt="Harry Lesh" class="profile-pic">
+            <img src="profile.jpg" alt="Profile Picture" class="profile-pic">
 
             <h1>Hi, I'm <span>Harry</span> 👋</h1>
 
-            <p>
-                Curious about technology, passionate about solving problems,
-                and always building something new.
+            <p class="typing-container">
+                <span id="typing"></span>
             </p>
 
             <a href="#projects" class="btn">View My Work</a>
@@ -275,8 +286,9 @@
         <div class="about">
 
             <p>
-                I enjoy exploring networking, software development, and emerging technologies.
-                I love learning by building, solving real-world problems, and continuously
+                I enjoy exploring networking, software development,
+                distributed systems, and emerging technologies.
+                I love building practical solutions and continuously
                 improving my skills through projects and hands-on experience.
             </p>
 
@@ -309,17 +321,17 @@
 
             <div class="project">
                 <h3>Portfolio Website</h3>
-                <p>Personal website built using HTML and CSS.</p>
+                <p>Personal website built using HTML, CSS and JavaScript.</p>
             </div>
 
             <div class="project">
                 <h3>Networking Documentation</h3>
-                <p>Collection of networking concepts and learning notes.</p>
+                <p>Networking concepts, notes and practical exercises.</p>
             </div>
 
             <div class="project">
                 <h3>Future Applications</h3>
-                <p>Upcoming software and technology projects.</p>
+                <p>More exciting software and networking projects coming soon.</p>
             </div>
 
         </div>
@@ -333,15 +345,81 @@
         <div class="contact">
 
             <p>Email: your-email@example.com</p>
-            <p>GitHub: <a href="https://github.com/HarryLenana" target="_blank">github.com/HarryLenana</a></p>
+
+            <p>
+                GitHub:
+                <a href="https://github.com/HarryLenana" target="_blank">
+                    github.com/HarryLenana
+                </a>
+            </p>
 
         </div>
 
     </section>
 
     <footer>
-        © 2026 Harry Lesh • Built with HTML & CSS
+        © 2026 Harry Lesh • Built with HTML, CSS & JavaScript
     </footer>
+
+    <script>
+
+        const words = [
+            "Networking Enthusiast",
+            "Software Developer",
+            "Tech Explorer",
+            "Problem Solver"
+        ];
+
+        let wordIndex = 0;
+        let charIndex = 0;
+        let deleting = false;
+
+        const typingElement = document.getElementById("typing");
+
+        function type() {
+
+            const currentWord = words[wordIndex];
+
+            if (!deleting) {
+
+                typingElement.textContent =
+                    currentWord.substring(0, charIndex + 1);
+
+                charIndex++;
+
+                if (charIndex === currentWord.length) {
+
+                    deleting = true;
+
+                    setTimeout(type, 1500);
+
+                    return;
+                }
+
+            } else {
+
+                typingElement.textContent =
+                    currentWord.substring(0, charIndex - 1);
+
+                charIndex--;
+
+                if (charIndex === 0) {
+
+                    deleting = false;
+
+                    wordIndex =
+                        (wordIndex + 1) % words.length;
+
+                }
+
+            }
+
+            setTimeout(type, deleting ? 50 : 100);
+        }
+
+        type();
+
+    </script>
 
 </body>
 
