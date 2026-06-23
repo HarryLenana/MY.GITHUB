@@ -4,69 +4,206 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My GitHub</title>
+    <title>Harry | Portfolio</title>
 
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: Arial, sans-serif;
+            font-family: 'Segoe UI', sans-serif;
         }
 
         body {
-            background: linear-gradient(135deg, #0f172a, #1e293b);
+            background: #0f172a;
             color: white;
-            height: 100vh;
+            line-height: 1.6;
+        }
+
+        header {
+            min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
-        }
-
-        .container {
             text-align: center;
-            max-width: 600px;
-            padding: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #0f172a, #1e293b, #2563eb);
         }
 
-        h1 {
-            font-size: 3rem;
+        .hero h1 {
+            font-size: 4rem;
             margin-bottom: 10px;
         }
 
-        p {
-            font-size: 1.1rem;
-            color: #cbd5e1;
-            margin-bottom: 25px;
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: auto;
+            color: #d1d5db;
         }
 
         .btn {
             display: inline-block;
-            text-decoration: none;
+            margin-top: 25px;
+            padding: 12px 28px;
             background: #3b82f6;
             color: white;
-            padding: 12px 25px;
+            text-decoration: none;
             border-radius: 8px;
-            transition: 0.3s;
+            transition: .3s;
         }
 
         .btn:hover {
-            background: #2563eb;
+            transform: translateY(-3px);
+        }
+
+        section {
+            padding: 80px 10%;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+        }
+
+        .about {
+            text-align: center;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .skills {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .skill {
+            background: #1e293b;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+        }
+
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: #1e293b;
+            padding: 25px;
+            border-radius: 15px;
+            transition: .3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .socials {
+            text-align: center;
+        }
+
+        .socials a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            font-size: 1.1rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #020617;
+        }
+
+        @media(max-width:768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
         }
     </style>
+
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>Hi, I'm Harry 👋</h1>
-        <p>
-            Passionate about technology, networking, and building practical solutions.
-            Welcome to my first GitHub project.
-        </p>
+    <header>
+        <div class="hero">
+            <h1>Harry Lesh 👋</h1>
+            <p>
+                Curious about technology, passionate about solving problems,
+                and always building something new.
+            </p>
 
-        <a href="https://github.com" class="btn">Visit GitHub</a>
-    </div>
+            <a href="#projects" class="btn">View Projects</a>
+        </div>
+    </header>
+
+    <section>
+        <h2 class="section-title">About Me</h2>
+
+        <div class="about">
+            <p>
+                I enjoy exploring technology, networking, software development,
+                and building practical solutions. I'm constantly learning,
+                experimenting, and turning ideas into projects.
+            </p>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Skills</h2>
+
+        <div class="skills">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">Networking</div>
+            <div class="skill">Git & GitHub</div>
+            <div class="skill">Problem Solving</div>
+            <div class="skill">Technology</div>
+        </div>
+    </section>
+
+    <section id="projects">
+        <h2 class="section-title">Projects</h2>
+
+        <div class="projects">
+
+            <div class="card">
+                <h3>Portfolio Website</h3>
+                <p>My personal portfolio built with HTML and CSS.</p>
+            </div>
+
+            <div class="card">
+                <h3>Networking Notes</h3>
+                <p>Documentation and learning notes about networking concepts.</p>
+            </div>
+
+            <div class="card">
+                <h3>Future App</h3>
+                <p>More exciting projects coming soon.</p>
+            </div>
+
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Connect With Me</h2>
+
+        <div class="socials">
+            <a href="https://github.com/">GitHub</a>
+            <a href="#">LinkedIn</a>
+            <a href="#">Email</a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Harry Lesh. Built with HTML & CSS.</p>
+    </footer>
 
 </body>
 
