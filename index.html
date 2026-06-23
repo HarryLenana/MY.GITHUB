@@ -46,7 +46,6 @@
         .logo {
             font-size: 1.4rem;
             font-weight: 700;
-            color: #fff;
         }
 
         nav ul {
@@ -56,8 +55,8 @@
         }
 
         nav a {
-            text-decoration: none;
             color: white;
+            text-decoration: none;
             transition: .3s;
         }
 
@@ -126,15 +125,22 @@
             }
         }
 
+        /* BUTTONS */
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
         .btn {
             display: inline-block;
-            margin-top: 30px;
             padding: 15px 35px;
-
             background: linear-gradient(135deg,
                     #3b82f6,
                     #8b5cf6);
-
             color: white;
             text-decoration: none;
             border-radius: 12px;
@@ -144,6 +150,16 @@
         .btn:hover {
             transform: translateY(-4px);
             box-shadow: 0 10px 30px rgba(59, 130, 246, .35);
+        }
+
+        .cv-btn {
+            background: linear-gradient(135deg,
+                    #10b981,
+                    #059669);
+        }
+
+        .cv-btn:hover {
+            box-shadow: 0 10px 30px rgba(16, 185, 129, .35);
         }
 
         /* SECTIONS */
@@ -194,9 +210,7 @@
         .skill {
             background: rgba(30, 41, 59, .6);
             backdrop-filter: blur(12px);
-
             border: 1px solid rgba(255, 255, 255, .08);
-
             padding: 25px;
             border-radius: 15px;
             text-align: center;
@@ -218,9 +232,7 @@
         .project {
             background: rgba(30, 41, 59, .6);
             backdrop-filter: blur(12px);
-
             border: 1px solid rgba(255, 255, 255, .08);
-
             padding: 25px;
             border-radius: 15px;
             transition: .3s;
@@ -228,10 +240,6 @@
 
         .project:hover {
             transform: translateY(-6px);
-        }
-
-        .project h3 {
-            margin-bottom: 10px;
         }
 
         .project p {
@@ -245,7 +253,7 @@
         }
 
         .contact p {
-            margin: 12px 0;
+            margin: 10px 0;
         }
 
         .contact a {
@@ -308,7 +316,17 @@
                 <span id="typing"></span>
             </p>
 
-            <a href="#projects" class="btn">View My Work</a>
+            <div class="hero-buttons">
+
+                <a href="#projects" class="btn">
+                    🚀 View My Work
+                </a>
+
+                <a href="cv.pdf" class="btn cv-btn" download>
+                    📄 Download CV
+                </a>
+
+            </div>
 
         </div>
 
@@ -409,8 +427,7 @@
         let charIndex = 0;
         let deleting = false;
 
-        const typingElement =
-            document.getElementById("typing");
+        const typingElement = document.getElementById("typing");
 
         function type() {
 
@@ -426,10 +443,9 @@
                 if (charIndex === currentWord.length) {
 
                     deleting = true;
-
                     setTimeout(type, 1500);
-
                     return;
+
                 }
 
             } else {
@@ -442,15 +458,14 @@
                 if (charIndex === 0) {
 
                     deleting = false;
-
-                    wordIndex =
-                        (wordIndex + 1) % words.length;
+                    wordIndex = (wordIndex + 1) % words.length;
 
                 }
 
             }
 
             setTimeout(type, deleting ? 50 : 100);
+
         }
 
         type();
